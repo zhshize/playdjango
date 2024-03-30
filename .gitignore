@@ -13,7 +13,9 @@ __pycache__/
 *$py.class
 
 # Editor
-.vscode
+.vscode/
+.code/
+.idea/
 
 # C extensions
 *.so

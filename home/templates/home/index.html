@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html' %}
+
+{% block body %}
+
+    <h1>上傳照片</h1>
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %} <!-- ⬅️ 用來避免 CSRF 攻擊的 -->
+        <label for="user_image_input">照片:</label><br>
+        <input id="user_image_input" type="file" name="user_image" accept="image/jpeg"><br><br>
+        <input type="submit" value="提交"/>
+    </form>
+
+    {% if result_filename %}
+        <h1>結果圖</h1>
+        <img src="{{ result_filename }}" alt="result image">
+    {% endif %}
+
+{% endblock %}
